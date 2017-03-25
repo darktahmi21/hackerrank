@@ -1,0 +1,35 @@
+divider = 1000000000
+
+
+def validate(number):
+    if len(number) != 10:
+        return False
+    if (number[0] == '7' or number[0] == '9' or number[0] == '8'):
+        return True
+    else:
+        return False
+
+
+def checknumber(string):
+    count = 0
+    for i in range(0, len(string)):
+            if (string[i]=='0' or string[i]=='1' or string[i]=='2' or string[i]=='3' or string[i]=='4' or string[i]=='5' or string[i]=='6' or string[i]=='7' or string[i]=='8' or string[i]=='9'):
+                count+=1
+    if (count==10):
+        return True
+    else:
+        return False
+
+
+n = int(input())
+
+for i in range(n):
+    inp = input()
+    decision = checknumber(inp)
+    if decision == True:
+        if (validate(inp)==True):
+            print("YES")
+        else:
+            print("NO")
+    else:
+        print("NO")
